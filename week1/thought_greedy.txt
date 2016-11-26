@@ -1,0 +1,30 @@
+quarter .25
+dime .1
+nickel .05
+penny .01
+
+
+
+
+
+輸入
+檢查大小
+
+
+int 函式 (m)
+quarter = (int)(m / .25)
+m -= quarter*.25
+dime = (int)(m / .1)
+m -= dime*.1
+nickel = (int)(m / .05)
+m -= nickel*.05
+penny = (int)(m / .01)
+
+
+
+全部乘以一百，再來除
+25
+10
+5
+1
+
