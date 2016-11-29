@@ -1,0 +1,33 @@
+include cs50.h
+include stdio.h
+include ctype.h
+include string.h
+
+Get key from argv
+check argc
+    if not 2
+        print usage
+        return 1
+loop through argv[1] char
+    if not alphabet
+        print usage
+        return 1
+
+
+set all key to upper //ready to -65
+print prompt to get plaintext
+get plaintext
+n = strlen(plaintext)
+keylen = strlen(argv[1])
+keyindex = 0
+for i is char in plaintext
+    if char is alphabet
+        if char is upper
+            print ( (plaintext[i] - 'A' + key[keyindex % keylen] - 'A' ) % 26 ) + 65
+            keyindex++
+        else
+            print ( (plaintext[i] - 'a' + key[keyindex % keylen] - 'A' ) % 26 ) + 97
+            keyindex++
+    else
+        print plaintext[i]
+
