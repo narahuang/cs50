@@ -1,6 +1,7 @@
 // CS50 week2 homework, the vigenere encryption
 // argv[1] would be encrypt key,
 // then ask user to enter plaintext, and output ciphertext
+// Nara Huang, 2016-11-29
 
 #include <cs50.h>
 #include <stdio.h>
@@ -57,4 +58,5 @@ int main(int argc, string argv[])
         }
     }
     printf("\n");
+    return 0;
 }
