@@ -8,7 +8,7 @@
 int main(int argc, string argv[])
 {
     string password;
-    string pass = "rofl";
+    string pass = argv[1];
     string salt = "50";
     password = crypt(pass,salt);
     printf("The encrypted password is: %s\n", password);
