@@ -91,3 +91,55 @@ void countingsort(int values[], int n) // Counting sort
     }
     return;
 }
+
+void mergesort(int values[], int n)
+{
+    if(n > 1)
+    {
+        int q, *left, *right, leftl=n/2 ,rightl=n-n/2; // Init values, leftl: left part length
+        left = (int*)malloc(leftl * sizeof(int)); // Generate memory space for left and right part
+        right = (int*)malloc(rightl * sizeof(int));
+
+        for(q=0; q<leftl; q++) left[q] = values[q]; // Copy left part from values[]
+        for(q=0 ; q<rightl ; q++) right[q] = values[q+leftl];
+        
+        mergesort( left, leftl); // Sort left part
+        mergesort( right, rightl);
+        merge(values, left, leftl, right, rightl); // Merge sorted left part with right part
+        free(left); // Free memeory to prevent memory leak
+        free(right);
+    }
+    return;
+}
+
+void merge(int values[], int left[], int leftl, int right[], int rightl)
+{
+    int i=0, j=0 ,k=0;
+    while(i < leftl && j < rightl)
+    {
+        if(left[i] < right[j])
+        {
+            values[k] = left[i];
+            k++;
+            i++;
+        }
+        else
+        {
+            values[k] = right[j];
+            k++;
+            j++;
+        }
+    }
+    while(i < leftl)
+    {
+        values[k] = left[i];
+        k++;
+        i++;
+    }
+    while(j < rightl)
+    {
+        values[k] = right[j];
+        k++;
+        j++;
+    }
+}

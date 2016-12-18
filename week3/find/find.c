@@ -52,7 +52,8 @@ int main(int argc, string argv[])
 
     // sort the haystack
     //bubblesort(haystack, size);
-    countingsort(haystack, size);
+    //countingsort(haystack, size);
+    mergesort(haystack, size);
     printf("Sorted:\n");
     for (int i = 0; i<size ;i++)
     {

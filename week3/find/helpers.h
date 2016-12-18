@@ -16,4 +16,5 @@ bool search(int value, int values[], int n);
  */
 void bubblesort(int values[], int n);
 void countingsort(int values[], int n);
-
+void mergesort(int values[], int n);
+void merge(int values[], int left[], int leftl, int right[], int rightl);
